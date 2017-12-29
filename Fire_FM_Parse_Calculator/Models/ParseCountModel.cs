@@ -13,6 +13,8 @@ namespace Fire_FM_Parse_Calculator.Models
         public string Divisions { get; }
         public CountType CountType { get; set; }
 
+        #region Constructors
+
         public ParseCountModel(string unit, CountType type)
         {
             Unit = unit;
@@ -41,6 +43,8 @@ namespace Fire_FM_Parse_Calculator.Models
             Divisions = divisions;
             CountType = CountType.Ratio;
         }
+
+        #endregion
 
         public override string ToString()
         {

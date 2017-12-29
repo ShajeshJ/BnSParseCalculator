@@ -9,6 +9,8 @@ namespace Fire_FM_Parse_Calculator.Models
 {
     public class FireFMParseModel : ParseModel
     {
+        #region User Provided Skill Counts
+
         public int BlazingBeams { get; set; }
         public int Infernos { get; set; }
         public int BlazingPalms { get; set; }
@@ -19,6 +21,10 @@ namespace Fire_FM_Parse_Calculator.Models
         public int Dragonblazes { get; set; }
         public int Impacts { get; set; }
         public int ShortFuses { get; set; }
+
+        #endregion
+
+        #region Intemediary Counts
 
         private int _globalCount
         {
@@ -35,11 +41,15 @@ namespace Fire_FM_Parse_Calculator.Models
             }
         }
 
+        #endregion
+
         public FireFMParseModel (int mins, int secs)
             :base(mins, secs)
         {
 
         }
+
+        #region Parse Calculators
 
         public ParseCountModel BBRate
         {
@@ -150,6 +160,8 @@ namespace Fire_FM_Parse_Calculator.Models
                 return new ParseCountModel("Smouldering Ash Uptime", count);
             }
         }
+
+        #endregion
 
         public override IEnumerable<ParseCountModel> CalculateParse()
         {
